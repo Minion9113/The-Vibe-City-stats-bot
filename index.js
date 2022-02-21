@@ -16,8 +16,8 @@ const guild = bot.guilds.get('619197704609988609');
 
 // Get our stats channels
 const totalUsers = bot.channels.get('945354051552444446');
-const onlineUsers = bot.channels.get('945354157739606046');
-const codeMonkeys = bot.channels.get('945354157739606046');
+const onlineUsers = bot.channels.get('945355793140707409');
+const codeMonkeys = bot.channels.get('945360461988237372');
 
 // Check every 30 seconds for changes
 setInterval(function() {
@@ -25,13 +25,13 @@ setInterval(function() {
 
   //Get actual counts
   var userCount = guild.memberCount;
-  var onlineCount = guild.members.filter(m => m.presence.status === 'online').size
-  var coderCount = guild.roles.get('888009098291998760').members.size;
+  var onlineCount = guild.members.filter(m => m.presence.status === 'Online , dnd').size
+  var coderCount = guild.roles.get('902426601814376448').members.size;
   
   // Log counts for debugging
   console.log("Total Users: " + userCount);
   console.log("Online Users: " + onlineCount);
-  console.log("Coders: " + coderCount);
+  console.log("Staff: " + coderCount);
 
   // Set channel names
   totalUsers.setName("Total Users: " + userCount)
@@ -42,7 +42,7 @@ setInterval(function() {
   .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
   .catch(console.error);
 
-  codeMonkeys.setName("Coders: " + coderCount)
+  codeMonkeys.setName("Staff: " + coderCount)
   .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
   .catch(console.error);
   }, 30000)
@@ -61,7 +61,7 @@ bot.on('message', async message => {
     let repo = new Discord.RichEmbed()
     .setDescription("Stats Bot Repository")
     .setColor("#00FF00")
-    .addField("Github", "https://github.com/Minion9113/The-Vibe-City-stats-bot  https://github.com/Minion9113/The-Vibe-City-Utilities");
+    .addField("Github", "https://github.com/Minion9113/The-Vibe-City-stats-bot https://github.com/Minion9113/The-Vibe-City-Utilities");
  
 
     return message.channel.send(repo);
