@@ -7,17 +7,17 @@ bot.login(config.token);
 // Log stats-bot in to the server and set status
 bot.on("ready", async () => {
 console.log(`${bot.user.username} has logged on.`)
-bot.user.setActivity('Half Life 3', { type: 'PLAYING' })
+bot.user.setActivity('Members joining and leaving', { type: 'PLAYING' })
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
   .catch(console.error);
 
 // Get our server
-const guild = bot.guilds.get('388093207575134208');
+const guild = bot.guilds.get('619197704609988609');
 
 // Get our stats channels
-const totalUsers = bot.channels.get('470358845751951361');
-const onlineUsers = bot.channels.get('470366354222874665');
-const codeMonkeys = bot.channels.get('470358906225295391');
+const totalUsers = bot.channels.get('945354051552444446');
+const onlineUsers = bot.channels.get('945354157739606046');
+const codeMonkeys = bot.channels.get('945354157739606046');
 
 // Check every 30 seconds for changes
 setInterval(function() {
@@ -26,7 +26,7 @@ setInterval(function() {
   //Get actual counts
   var userCount = guild.memberCount;
   var onlineCount = guild.members.filter(m => m.presence.status === 'online').size
-  var coderCount = guild.roles.get('388102002695077888').members.size;
+  var coderCount = guild.roles.get('888009098291998760').members.size;
   
   // Log counts for debugging
   console.log("Total Users: " + userCount);
