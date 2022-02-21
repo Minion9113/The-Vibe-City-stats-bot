@@ -61,7 +61,7 @@ bot.on('message', async message => {
     let repo = new Discord.RichEmbed()
     .setDescription("Stats Bot Repository")
     .setColor("#00FF00")
-    .addField("Github", "https://github.com/Minion9113/The-Vibe-City-stats-bot / https://github.com/Minion9113/The-Vibe-City-Utilities");
+    .addField("Github", "https://github.com/Minion9113/The-Vibe-City-stats-bot  https://github.com/Minion9113/The-Vibe-City-Utilities");
  
 
     return message.channel.send(repo);
